@@ -1,7 +1,5 @@
-talent_override=feral_affinity
-
 actions.precombat=flask,type=flask_of_the_seventh_demon
-actions.precombat+=/food,type=seedbattered_fish_plate
+actions.precombat+=/food,type=lemon_herb_filet
 actions.precombat+=/augmentation,type=defiled
 actions.precombat+=/cat_form
 actions.precombat+=/prowl
@@ -11,7 +9,7 @@ actions.precombat+=/potion,name=old_war
 actions=/rake,if=buff.prowl.up&buff.cat_form.up
 actions+=/auto_attack
 actions+=/potion,name=old_war,if=buff.rage_of_the_sleeper.up
-actions+=/call_action_list,name=cat,if=(cooldown.thrash_bear.remains>0&cooldown.mangle.remains>0&buff.rage_of_the_sleeper.down&buff.incarnation.down&buff.galactic_guardian.down)|(buff.cat_form.up&energy>20)|(dot.rip.ticking&dot.rip.remains<3&target.health.pct<25)
+actions+=/call_action_list,name=cat,if=(cooldown.thrash_bear.remains>0&cooldown.mangle.remains>0&buff.rage_of_the_sleeper.down&buff.incarnation.down&buff.galactic_guardian.down&rage<45)|(buff.cat_form.up&energy>20)|(dot.rip.ticking&dot.rip.remains<3&target.health.pct<25)
 actions+=/call_action_list,name=bear
 
 actions.bear+=/bear_form
@@ -26,8 +24,9 @@ actions.bear+=/rage_of_the_sleeper,if=(dot.rip.remains>10&buff.bear_form.up)
 actions.bear+=/thrash_bear,if=(buff.incarnation.up=1&dot.thrash_bear.remains<=2)|talent.rend_and_tear.enabled&dot.thrash_bear.stack<3|talent.rend_and_tear.enabled&equipped.137067&dot.thrash_bear.stack<5|equipped.137056
 actions.bear+=/mangle
 actions.bear+=/thrash_bear
-actions.bear+=/moonfire,if=buff.galactic_guardian.up
+actions.bear+=/moonfire,if=(buff.galactic_guardian.up&target.adds=0)|(dot.moonfire.remains<5&!(talent.galactic_guardian.enabled))
 actions.bear+=/maul
+actions.bear+=/moonfire,if=(dot.moonfire.remains<5&talent.galactic_guardian.enabled)
 actions.bear+=/swipe_bear
 
 actions.cat+=/dash,if=buff.cat_form.down
