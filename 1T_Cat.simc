@@ -1,3 +1,5 @@
+talent_override=feral_affinity
+
 actions.precombat=flask,type=flask_of_the_seventh_demon
 actions.precombat+=/food,type=lemon_herb_filet
 actions.precombat+=/augmentation,type=defiled
