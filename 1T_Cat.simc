@@ -20,7 +20,7 @@ actions.bear+=/use_items
 actions.bear+=/incarnation
 actions.bear+=/barkskin,if=talent.brambles.enabled&buff.rage_of_the_sleeper.up|talent.brambles.enabled&cooldown.rage_of_the_sleeper.remains>60
 actions.bear+=/berserking,if=buff.rage_of_the_sleeper.up
-actions.bear+=/moonfire,if=(buff.incarnation.remains>15&!dot.moonfire.ticking)|(dot.moonfire.remains<5&!(talent.galactic_guardian.enabled))&buff.incarnation.down
+actions.bear+=/moonfire,if=(buff.incarnation.remains>15&!dot.moonfire.ticking)|((dot.moonfire.remains<5&!(talent.galactic_guardian.enabled))&buff.incarnation.down)
 actions.bear+=/lunar_beam,if=(dot.rip.remains>10&buff.bear_form.up)
 actions.bear+=/rage_of_the_sleeper,if=(dot.rip.remains>10&buff.bear_form.up)
 actions.bear+=/maul,if=(buff.incarnation.up&(cooldown.rage_of_the_sleeper.remains>4&((rage>90&cooldown.thrash_bear.remains>gcd)|(cooldown.thrash_bear.remains<gcd&!action.thrash_bear.usable|cooldown.mangle.remains<gcd&!action.mangle.usable)&rage>80))|(cooldown.rage_of_the_sleeper.remains<4&((rage>80&cooldown.thrash_bear.remains>gcd)|(cooldown.thrash_bear.remains<gcd&!action.thrash_bear.usable|cooldown.mangle.remains<gcd&!action.mangle.usable)&rage>70)))
